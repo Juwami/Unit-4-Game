@@ -1,0 +1,24 @@
+.gameTitle {
+    background-color: lime;
+}
+
+.gameInstructions {
+    background-color: lightblue;
+}
+
+.scoreNeeded {
+    background-color: yellow;
+}
+
+.scoreBoard {
+    background-color: orange;
+}
+
+.rupees {
+    width: 100px;
+    height: 100px;
+}
+
+.totalSection {
+    background-color: teal;
+}

@@ -5,43 +5,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Crystals Collector!</title>
+
+    <link rel="stylesheet" type="text/css" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+
 </head>
 
 <body>
 
-    <main>
-        <div>
-            <h1>Crystals Collector!</h1>
-        </div>
-        <div>
-            <p>You will be given a random number at the start of the game.</p>
-            <p>There are four crytals below. By clicking on a crystal you will add a specific amount of points to your
-                total score.</p>
-            <p>You win the game by matching your total score to the random number, you the lose the game if your total
-                score goes above the random number.</p>
-            <p>The value of each crystal is hidden from you until you click on it.</p>
-            <p>Each time when the game starts, the game will change the values of each crystal.</p>
-        </div>
-        <div>
-            <div>#Random Number</div>
-            <div>
-                <div>Wins:</div>
-                <div>Losses:</div>
-            </div>
-        </div>
-        <div>
-            <div><img></div>
-            <div><img></div>
-            <div><img></div>
-            <div><img></div>
-        </div>
-        <div>
-            <p>Your total score is:</p>
-        </div>
-        <div>
-            <p id="totalScore">0</p>
-        </div>
+    <header class="container">
+        <h1 class="text-center gameTitle">Crystals Collector!</h1>
+    </header>
+
+    <main class="container">
+        <section class="row">
+            <section class="col-12 gameInstructions">
+                <p">You will be given a random number at the start of the game</p>
+                <p>There are four crystals below. By clicking on a crystal you will add a specific amount of points to
+                    your total score.</p>
+                <p>You win the game by matching your total schore to a random number, you lose the game if your total
+                    scores goes above the random number.</p>
+                <p>The value of each crystal is hidden from you until you click on it.</p>
+                <p>Each time when the game starts, the game will change the values of each crystal</p>
+            </section>
+        </section>
+        <section class="row">
+            <section class="col-6 scoreNeeded">
+                <p class="text-center">Needed score:</p>
+                <h3 id="neededScore" class="text-center">0</h3>
+            </section>
+            <section class="col-6 scoreBoard">
+                <h3 id="winsText">Wins: 0</h3>
+                <h3 id="lossesText">Losses: 0</h3>
+            </section>
+        </section>
+        <section class="row">
+            <section class="col-12 d-flex justify-content-around">
+                <img id="blueRupee" class="rupees" src="assets/images/Blue_Rupee_Artwork.png">
+                <img id="greenRupee" class="rupees" src="assets/images/Green_Rupee_Artwork.png">
+                <img id="orangeRupee" class="rupees" src="assets/images/Orange_Rupee_Artwork.png">
+                <img id="purpleRupee" class="rupees" src="assets/images/Purple_Rupee_Artwork.png">
+                <img id="redRupee" class="rupees" src="assets/images/Red_Rupee_Artwork.png">
+                <img id="silverRupee" class="rupees" src="assets/images/Silver_Rupee_Artwork.png">
+                <img id="yellowRupee" class="rupees" src="assets/images/Yellow_Rupee_Artwork.png">
+            </section>
+        </section>
+        <section class="row">
+            <section class="col-12 text-center totalSection">
+                <p>Your total score is:</p>
+            </section>
+            <section class="col-12 text-center totalSection">
+                <h3 id="totalScore">0</h3>
+            </sectino>
+        </section>
+
     </main>
 
 </body>
