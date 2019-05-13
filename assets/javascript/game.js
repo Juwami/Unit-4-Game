@@ -6,27 +6,24 @@
 let wins = 0
 let losses = 0
 let userScore = 0
-let winningNumber = changeWinningNumber
+let winningNumber = 0
 let gemValues = []
 
-$('#neededScore').html(winningNumber)
+changeWinningNumber()
+resetGemValues()
 
 function changeWinningNumber() {
     num = Math.floor(Math.random() * 120) + 19
-    return num
+    winningNumber = num
+    $('#neededScore').html(winningNumber)
 }
 
 function resetGemValues() {
-    for (i=0; i<5; i++) {
-        gemValues.push(Math.floor(Math.random() * 12)+ 1)
-        }
+    for (i = 0; i < 5; i++) {
+        gemValues.push(Math.floor(Math.random() * 12) + 1)
+    }
+    console.log('gem value ' + gemValues) 
 }
-
-for (i=0; i<5; i++) {
-gemValues.push(Math.floor(Math.random() * 12)+ 1)
-}
-// Below line is for testing gemValues
-console.log(gemValues)
 
 $('#blueRupee').on('click', addBlueValue)
 $('#greenRupee').on('click', addGreenValue)
@@ -34,34 +31,52 @@ $('#orangeRupee').on('click', addOrangeValue)
 $('#purpleRupee').on('click', addPurpleValue)
 $('#redRupee').on('click', addRedValue)
 
-
-// if (userScore === winningNumber) {
-//     wins++
-//     $('winsText').html('Wins: ' + wins)
-//     changeWinningNumber()
-// } else if (userScore > winningNumber) {
-//     losses++
-//     $('lossesText').html('Losses: ' + losses)
-//     changeWinningNumber()
-// }
+function compareValues() {
+    if (userScore === winningNumber) {
+        wins++
+        $('#winsText').html('Wins: ' + wins)
+        changeWinningNumber()
+        gemValues.length = 0
+        resetGemValues()
+        userScore = 0
+    } 
+    if (userScore > winningNumber) {
+        losses++
+        console.log('loss')
+        $('#lossesText').html('Losses: ' + losses)
+        changeWinningNumber()
+        gemValues.length = 0
+        resetGemValues()
+        userScore = 0
+    }
+}
 
 function addBlueValue() {
     userScore = userScore + gemValues[0]
+    compareValues()
     $('#totalScore').html(userScore)
 }
+
 function addGreenValue() {
     userScore = userScore + gemValues[1]
+    compareValues()
     $('#totalScore').html(userScore)
 }
+
 function addOrangeValue() {
     userScore = userScore + gemValues[2]
+    compareValues()
     $('#totalScore').html(userScore)
 }
+
 function addPurpleValue() {
     userScore = userScore + gemValues[3]
+    compareValues()
     $('#totalScore').html(userScore)
 }
+
 function addRedValue() {
     userScore = userScore + gemValues[4]
+    compareValues()
     $('#totalScore').html(userScore)
 }
